@@ -20,7 +20,7 @@ const router = new Router({
   ],
 });
 
-Router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => {
   if (sessionStorage.getItem('authToken') != null || to.path === '/auth') {
     next();
   } else {

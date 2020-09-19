@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="text-center">Welcome to Chatire!</h1>
+    <h1 class="text-center">Welcome to Chat</h1>
     <div id="auth-container" class="row">
       <div class="col-sm-4 offset-sm-4">
         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -26,9 +26,7 @@
               <div class="form-group">
 
                 <input  class="form-control" id="email" v-model="email"
-                        type="email"  placeholder="Email Address"
-                        required
-                >
+                        type="email"  placeholder="Email Address" required>
 
               </div>
               <div class="form-row">
@@ -44,9 +42,7 @@
 
                     <input  id="password" v-model="password"
                             type="password" class="form-control"
-                            placeholder="Password"
-                            required
-                    >
+                            placeholder="Password" required>
 
                 </div>
               </div>
@@ -86,7 +82,7 @@
 </template>
 
 <script>
-const $ = window.jQuery;
+// const $ = window.jQuery;
 
 export default {
   data() {
@@ -95,6 +91,11 @@ export default {
       username: '',
       password: '',
     };
+  },
+  methods: {
+    signUp() {
+      console.log("signUp")
+    },
   },
 };
 </script>
