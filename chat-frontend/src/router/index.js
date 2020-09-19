@@ -6,6 +6,7 @@ import UserAuth from '@/components/UserAuth';
 Vue.use(Router);
 
 const router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/chats',

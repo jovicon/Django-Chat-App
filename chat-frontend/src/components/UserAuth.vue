@@ -94,7 +94,33 @@ export default {
   },
   methods: {
     signUp() {
-      console.log("signUp")
+      const url = 'http://localhost:8000/auth/users/';
+      const headers = { 'Content-Type': 'multipart/form-data' };
+
+      this.axios.post(url, this.data, headers)
+        .then(() => {
+          alert('Your account has been created. You will be signed in automatically');
+          this.signIn();
+        })
+        .catch((response) => {
+          alert(response.responseText);
+        });
+    },
+    signIn() {
+      const credentials = { username: this.username, password: this.password };
+      const url = 'http://localhost:8000/auth/token/login/';
+      const headers = { 'Content-Type': 'multipart/form-data' };
+      const self = this;
+
+      this.axios.post(url, credentials, headers)
+        .then((response) => {
+          sessionStorage.setItem('authToken', response.data.auth_token);
+          sessionStorage.setItem('username', self.username);
+          self.$router.push('/chats');
+        })
+        .catch((response) => {
+          alert(response.responseText);
+        });
     },
   },
 };
