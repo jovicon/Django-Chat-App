@@ -10,7 +10,7 @@ def deserialize_user(user):
     ''' Deserialize user instance to Json '''
     return {
         'id': user.id, 
-        'user.name': user.name,
+        'username': user.username,
         'email': user.email,
         'first_name': user.first_name,
         'last_name': user.last_name
