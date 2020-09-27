@@ -3,7 +3,7 @@ Real-time chat interface where multiple users can interact with each other by se
 
 Before we start, let’s discuss how everything works from a higher level  
 
-**Architecture**
+**Architecture**  
 ![Architecture to Real-time chat interface](assets/img/architecture.PNG)
 
 # Django development install
