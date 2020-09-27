@@ -9,7 +9,7 @@ const router = new Router({
   mode: 'history',
   routes: [
     {
-      path: '/chats',
+      path: '/chats/:uri?',
       name: 'Chat',
       component: Chat,
     },
@@ -18,6 +18,7 @@ const router = new Router({
       name: 'UserAuth',
       component: UserAuth,
     },
+
   ],
 });
 
