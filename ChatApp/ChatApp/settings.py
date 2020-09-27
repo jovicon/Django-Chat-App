@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'djoser',
 
     # my apps
-    'chat'
+    'chat',
+    'notifications',
 ]
 
 MIDDLEWARE = [
@@ -118,6 +119,14 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ]
+}
+
+# Celery settings 
+CELERY_TASK_ALWAYS_EAGER = True
+
+# notifications settings
+NOTIFICATIONS_CHANNELS = {
+   'websocket': 'chat.channels.BroadCastWebSocketChannel'
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
